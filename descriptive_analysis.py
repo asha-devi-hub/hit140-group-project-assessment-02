@@ -4,12 +4,21 @@
 import init
 import matplotlib.pyplot as plt
 import seaborn as sns
+import scipy.stats as stats
 
 # Measures of Central Tendency
 data1 = init.get_cleaned_dataset1()
 df = data1['seconds_after_rat_arrival']
 print("Measures of central tendencies for seconds_after_rat_arrival:")
 info = df.describe()
+
+df.hist(bins=20)
+plt.title('Histogram of seconds_after_rat_arrival')
+plt.savefig("result/histogram.png")
+plt.show()
+
+
+
 print(info)
 
 print("====================================")
